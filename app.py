@@ -147,7 +147,7 @@ if st.button("⬇️ Download as MP3"):
                 status_text.text("Converting audio...")
 
         ydl_opts = {
-            "format": "bestaudio/best",
+            "format": "ba/bestaudio/best",
             "postprocessors": [
                 {
                     "key": "FFmpegExtractAudio",
@@ -160,6 +160,12 @@ if st.button("⬇️ Download as MP3"):
             "quiet": True,
             "no_warnings": True,
             "progress_hooks": [progress_hook],
+            "http_headers": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+                "Accept-Language": "en-US,en;q=0.9",
+                "Referer": "https://www.youtube.com/",
+            },
+            "extractor_args": {"youtube": {"player_client": ["web", "mweb"]}},
         }
 
         try:
