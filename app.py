@@ -147,7 +147,7 @@ if st.button("⬇️ Download as MP3"):
                 status_text.text("Converting audio...")
 
         ydl_opts = {
-            "format": "ba/bestaudio/best",
+            "format": "bestaudio/best[ext=m4a]/best",
             "postprocessors": [
                 {
                     "key": "FFmpegExtractAudio",
