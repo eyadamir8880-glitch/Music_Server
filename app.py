@@ -250,7 +250,7 @@ else:
         with col3:
             with open(filepath, "rb") as f:
                 audio_bytes = f.read()
-            st.audio(audio_bytes, format="audio/mp3", key=f"audio_{i}")
+            st.audio(audio_bytes, format="audio/mp3")
 
         with col4:
             st.download_button(
@@ -334,7 +334,7 @@ for pl_name, songs in list(playlists.items()):
                         st.write(song)
                     with col_b:
                         with open(song_path, "rb") as f:
-                            st.audio(f.read(), format="audio/mp3", key=f"pl_audio_{pl_name}_{song}")
+                            st.audio(f.read(), format="audio/mp3")
                     with col_c:
                         if st.button("Remove", key=f"pl_rm_{pl_name}_{song}"):
                             playlists[pl_name].remove(song)
